@@ -13,6 +13,7 @@
 @synthesize loginName;
 @synthesize password;
 @synthesize favoriteColor;
+
 NSMutableArray *colors;
 NSString *favoriteColorSelected;
 
@@ -26,6 +27,12 @@ NSString *favoriteColorSelected;
     [colors addObject:@"Red"];
     [colors addObject:@"Green"];
     [colors addObject:@"Blue"];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+
     [super viewDidLoad];
 }
 
