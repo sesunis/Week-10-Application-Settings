@@ -2,8 +2,8 @@
 //  ApplicationSettingsAppDelegate.h
 //  ApplicationSettings
 //
-//  Created by Wei-Meng Lee on 3/8/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Sarah Esunis on 4/12/14.
+//  Copyright 2014 Sarah Esunis. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

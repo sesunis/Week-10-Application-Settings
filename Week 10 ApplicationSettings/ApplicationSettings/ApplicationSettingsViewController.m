@@ -2,8 +2,8 @@
 //  ApplicationSettingsViewController.m
 //  ApplicationSettings
 //
-//  Created by Wei-Meng Lee on 3/8/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Sarah Esunis on 4/12/14.
+//  Copyright 2014 Sarah Esunis. All rights reserved.
 //
 
 #import "ApplicationSettingsViewController.h"
@@ -34,7 +34,23 @@ NSString *favoriteColorSelected;
     [self.view addGestureRecognizer:tap];
 
     [super viewDidLoad];
-}
+   
+        // Do any additional setup after loading the view, typically from a nib.
+
+        
+        [self.view addGestureRecognizer:tap];
+    
+
+    }
+    -(void)dismissKeyboard {
+        // add textfields and textviews
+        //[Nameofoutletlikeatextfield resignFirstResponder];
+        [self.loginName resignFirstResponder];
+        [self.password resignFirstResponder];
+        [self.favoriteColor resignFirstResponder];
+     
+    }
+
 
 //---number of components in the Picker view---
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
