@@ -19,12 +19,12 @@
     // -- initialize the settings value first;
     // if not all settings values will be null --
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if (![defaults objectForKey:@"login_name"])
-        [defaults setObject:@"login name" forKey:@"login_name"];
-    if (![defaults objectForKey:@"password"])
-        [defaults setObject:@"password" forKey:@"password"];
-    if (![defaults objectForKey:@"color"])
-        [defaults setObject:@"Green" forKey:@"color"];
+    if (![defaults objectForKey:@"Title"])
+        [defaults setObject:@"titles" forKey:@"titles"];
+    if (![defaults objectForKey:@"favorite event of the day"])
+        [defaults setObject:@"events" forKey:@"events"];
+    if (![defaults objectForKey:@"where"])
+        [defaults setObject:@"places" forKey:@"places"];
     [defaults synchronize];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];

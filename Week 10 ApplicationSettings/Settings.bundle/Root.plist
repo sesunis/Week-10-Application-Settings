@@ -12,13 +12,13 @@
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>Login Name</string>
+			<string>Title</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Key</key>
-			<string>login_name</string>
+			<string>titles</string>
 			<key>DefaultValue</key>
-			<string>login name</string>
+			<string>titles</string>
 			<key>AutoCapitalizationType</key>
 			<string>None</string>
 			<key>AutocorrectionType</key>
@@ -26,36 +26,36 @@
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>Password</string>
+			<string>Favorite Event of the Day</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Key</key>
-			<string>password</string>
+			<string>events</string>
 			<key>DefaultValue</key>
-			<string>password</string>
+			<string>events</string>
 			<key>IsSecure</key>
 			<true/>
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>Favorite Color</string>
+			<string>Where</string>
 			<key>Type</key>
 			<string>PSMultiValueSpecifier</string>
 			<key>Key</key>
-			<string>color</string>
+			<string>places</string>
 			<key>DefaultValue</key>
-			<string>Green</string>
+			<string>Work</string>
 			<key>Values</key>
 			<array>
-				<string>Red</string>
-				<string>Green</string>
-				<string>Blue</string>
+				<string>Home</string>
+				<string>Work</string>
+				<string>Other</string>
 			</array>
 			<key>Titles</key>
 			<array>
-				<string>Red Color</string>
-				<string>Green Color</string>
-				<string>Blue Color</string>
+				<string>Home</string>
+				<string>Work</string>
+				<string>Other</string>
 			</array>
 		</dict>
 	</array>

@@ -11,14 +11,14 @@
 @interface ApplicationSettingsViewController : UIViewController 
 <UIPickerViewDataSource, UIPickerViewDelegate> 
 {
-        IBOutlet UITextField *loginName;
-        IBOutlet UITextField *password;
-        IBOutlet UIPickerView *favoriteColor;
+        IBOutlet UITextField *title;
+        IBOutlet UITextField *event;
+        IBOutlet UIPickerView *where;
 }
 
-@property (nonatomic, retain) UITextField *loginName;
-@property (nonatomic, retain) UITextField *password;
-@property (nonatomic, retain) UIPickerView *favoriteColor;
+@property (nonatomic, retain) UITextField *Title;
+@property (nonatomic, retain) UITextField *event;
+@property (nonatomic, retain) UIPickerView *where;
 
 -(IBAction) loadSettings: (id) sender;
 -(IBAction) saveSettings: (id) sender;

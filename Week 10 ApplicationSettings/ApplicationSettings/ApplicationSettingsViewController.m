@@ -10,12 +10,12 @@
 
 @implementation ApplicationSettingsViewController
 
-@synthesize loginName;
-@synthesize password;
-@synthesize favoriteColor;
+@synthesize Title;
+@synthesize event;
+@synthesize where;
 
-NSMutableArray *colors;
-NSString *favoriteColorSelected;
+NSMutableArray *places;
+NSString *placesSelected;
 
 -(IBAction) doneEditing:(id) sender {
     [sender resignFirstResponder];
@@ -23,10 +23,10 @@ NSString *favoriteColorSelected;
 
 - (void)viewDidLoad {
     //---create an array containing the colors values---
-    colors = [[NSMutableArray alloc] init];
-    [colors addObject:@"Red"];
-    [colors addObject:@"Green"];
-    [colors addObject:@"Blue"];
+    places = [[NSMutableArray alloc] init];
+    [places addObject:@"Home"];
+    [places addObject:@"Work"];
+    [places addObject:@"Other"];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
@@ -45,9 +45,9 @@ NSString *favoriteColorSelected;
     -(void)dismissKeyboard {
         // add textfields and textviews
         //[Nameofoutletlikeatextfield resignFirstResponder];
-        [self.loginName resignFirstResponder];
-        [self.password resignFirstResponder];
-        [self.favoriteColor resignFirstResponder];
+        [self.Title resignFirstResponder];
+        [self.event resignFirstResponder];
+        [self.where resignFirstResponder];
      
     }
 
@@ -60,42 +60,42 @@ NSString *favoriteColorSelected;
 //---number of items(rows) in the Picker view---
 - (NSInteger)pickerView:(UIPickerView *)thePickerView
 numberOfRowsInComponent:(NSInteger)component {
-    return [colors count];
+    return [places count];
 }
 
 //---populating the Picker view---
 - (NSString *)pickerView:(UIPickerView *)thePickerView
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component {
-    return [colors objectAtIndex:row];
+    return [places objectAtIndex:row];
 }
 
 //---the item selected by the user---
 - (void)pickerView:(UIPickerView *)thePickerView
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component {
-    favoriteColorSelected = [colors objectAtIndex:row];
+    placesSelected = [places objectAtIndex:row];
 }
 
 -(IBAction) loadSettings: (id) sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    loginName.text = [defaults objectForKey:@"login_name"];
-    password.text = [defaults objectForKey:@"password"];
+    title.text = [defaults objectForKey:@"title"];
+    event.text = [defaults objectForKey:@"title"];
     
     //---find the index of the array for the color saved---
-    favoriteColorSelected = [[NSString alloc] initWithString:
-                             [defaults objectForKey:@"color"]];
-    int selIndex = [colors indexOfObject:favoriteColorSelected];
+    placesSelected = [[NSString alloc] initWithString:
+                             [defaults objectForKey:@"where"]];
+    int selIndex = [places indexOfObject:placesSelected];
     
     //---display the saved color in the Picker view---
-    [favoriteColor selectRow:selIndex inComponent:0 animated:YES];
+    [where selectRow:selIndex inComponent:0 animated:YES];
 }
 
 -(IBAction) saveSettings: (id) sender {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:loginName.text forKey:@"login_name"];
-    [defaults setObject:password.text forKey:@"password"];
-    [defaults setObject:favoriteColorSelected forKey:@"color"];
+    [defaults setObject:title.text forKey:@"title"];
+    [defaults setObject:event.text forKey:@"events"];
+    [defaults setObject:placesSelected forKey:@"where"];
     [defaults synchronize];
     
     UIAlertView *alert = 
@@ -109,11 +109,11 @@ numberOfRowsInComponent:(NSInteger)component {
 }
 
 - (void)dealloc {
-    [colors release];
-    [favoriteColorSelected release];
-    [loginName release];
-    [password release];
-    [favoriteColor release];
+    [places release];
+    [placesSelected release];
+    [title release];
+    [event release];
+    [where  release];
     [super dealloc];
 }
 
